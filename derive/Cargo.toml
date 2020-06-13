@@ -1,9 +1,9 @@
 [package]
-name = "glade"
+name = "glade_derive"
 version = "0.1.0-alpha"
 description = "Derive macros for simple use of GTK+ Glade UI bindings in Rust"
 authors = ["Dr. Maxim Orlovsky <dr.orlovsky@gmail.com>"]
-keywords = ["gtk", "glade", "ui", "gui"]
+keywords = ["gtk", "glade", "ui", "derive"]
 categories = ["gui"]
 repository = "https://github.com/dr-orlovsky/rust-glade"
 homepage = "https://github.com/dr-orlovsky/rust-glade"
@@ -12,11 +12,10 @@ readme = "README.md"
 edition = "2018"
 
 [lib]
+proc-macro = true
 
 [dependencies]
-amplify = "~0.1.0"
-derive_wrapper = "~0.1.6"
-
-[workspace]
-members = [".", "derive"]
-default-members = [".", "derive"]
+quote = "~1.0.7"
+syn = "~1.0.31"
+amplify_derive = "~0.1.0"
+glade = { path = ".." }
