@@ -16,4 +16,7 @@
 #[display_from(Debug)]
 pub enum Error {
     ParseFailed,
+
+    #[derive_from(std::option::NoneError)]
+    WidgetNotFound,
 }
