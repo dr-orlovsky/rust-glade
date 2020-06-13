@@ -1,4 +1,4 @@
-// Derive macros for simple use of GTK+ Glade UI bindings in Rust
+// Components for simple use of GTK+ Glade UI bindings in Rust
 //
 // Written in 2020 by
 //     Dr. Maxim Orlovsky <dr.orlovsky@gmail.com>
@@ -12,10 +12,8 @@
 // along with this software.
 // If not, see <https://opensource.org/licenses/MIT>.
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+#[derive(Clone, PartialEq, Eq, Debug, Display, From, Error)]
+#[display_from(Debug)]
+pub enum Error {
+    ParseFailed,
 }

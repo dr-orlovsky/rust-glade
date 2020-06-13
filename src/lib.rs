@@ -1,4 +1,4 @@
-// Derive macros for simple use of GTK+ Glade UI bindings in Rust
+// Components for simple use of GTK+ Glade UI bindings in Rust
 //
 // Written in 2020 by
 //     Dr. Maxim Orlovsky <dr.orlovsky@gmail.com>
@@ -12,10 +12,22 @@
 // along with this software.
 // If not, see <https://opensource.org/licenses/MIT>.
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+#[macro_use]
+extern crate derive_wrapper;
+
+mod error;
+pub use error::Error;
+
+#[macro_export]
+macro_rules! glade_load {
+    ($builder:ident, $file:literal) => {
+        $builder.get_object($file).ok_or($crate::Error::ParseFailed)
+    };
+}
+
+pub trait View
+where
+    Self: Sized,
+{
+    fn load_glade() -> Result<Self, Error>;
 }

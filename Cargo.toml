@@ -16,7 +16,3 @@ edition = "2018"
 [dependencies]
 amplify = "~0.1.0"
 derive_wrapper = "~0.1.6"
-
-[workspace]
-members = [".", "derive"]
-default-members = [".", "derive"]
