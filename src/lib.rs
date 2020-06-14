@@ -20,6 +20,9 @@ extern crate derive_wrapper;
 mod error;
 pub use error::Error;
 
+use std::cell::RefCell;
+use std::rc::Rc;
+
 #[macro_export]
 macro_rules! glade_load {
     ($builder:ident, $file:literal) => {
@@ -31,5 +34,5 @@ pub trait View
 where
     Self: Sized,
 {
-    fn load_glade() -> Result<Self, Error>;
+    fn load_glade() -> Result<Rc<RefCell<Self>>, Error>;
 }
