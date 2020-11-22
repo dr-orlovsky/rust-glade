@@ -13,10 +13,11 @@
 // If not, see <https://opensource.org/licenses/MIT>.
 
 #[derive(Clone, PartialEq, Eq, Debug, Display, From, Error)]
-#[display_from(Debug)]
+#[display(doc_comments)]
 pub enum Error {
+    /// Failed to parse glade file
     ParseFailed,
 
-    #[derive_from(std::option::NoneError)]
+    /// The specified widget is not found
     WidgetNotFound,
 }
