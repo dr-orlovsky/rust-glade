@@ -12,6 +12,8 @@
 // along with this software.
 // If not, see <https://opensource.org/licenses/MIT>.
 
+#![feature(try_trait)]
+
 #[macro_use]
 extern crate amplify_derive;
 

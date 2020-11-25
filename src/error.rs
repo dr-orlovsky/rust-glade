@@ -19,5 +19,6 @@ pub enum Error {
     ParseFailed,
 
     /// The specified widget is not found
+    #[from(std::option::NoneError)]
     WidgetNotFound,
 }
