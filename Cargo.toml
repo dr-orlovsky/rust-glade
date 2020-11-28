@@ -1,6 +1,6 @@
 [package]
 name = "glade"
-version = "0.1.0-alpha"
+version = "0.1.0-alpha.2"
 description = "Derive macros for simple use of GTK+ Glade UI bindings in Rust"
 authors = ["Dr. Maxim Orlovsky <dr.orlovsky@gmail.com>"]
 keywords = ["gtk", "glade", "ui", "gui"]
